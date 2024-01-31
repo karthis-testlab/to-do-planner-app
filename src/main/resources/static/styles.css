@@ -1,5 +1,5 @@
 ul.todo-list {
-    list-style-type: square;
+    list-style-type: disc;
 }
 
 ul.todo-list li {

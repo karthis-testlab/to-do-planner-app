@@ -16,7 +16,7 @@ public class PageController {
 
     @GetMapping("/")
     public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView("index");
+        ModelAndView modelAndView = new ModelAndView("indexB");
         modelAndView.addObject("newTodo", new ToDoModel());
         modelAndView.addObject("backlog", toDoService.getAllByStatus(StatusType.BACKLOG));
         modelAndView.addObject("doing", toDoService.getAllByStatus(StatusType.DOING));
