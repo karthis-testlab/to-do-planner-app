@@ -14,8 +14,18 @@ public class PageController {
 
     final ToDoService toDoService;
 
-    @GetMapping("/")
+    @GetMapping("/index-a")
     public ModelAndView index() {
+        ModelAndView modelAndView = new ModelAndView("indexA");
+        modelAndView.addObject("newTodo", new ToDoModel());
+        modelAndView.addObject("backlog", toDoService.getAllByStatus(StatusType.BACKLOG));
+        modelAndView.addObject("doing", toDoService.getAllByStatus(StatusType.DOING));
+        modelAndView.addObject("done", toDoService.getAllByStatus(StatusType.DONE));
+        return modelAndView;
+    }
+
+    @GetMapping("/index-b")
+    public ModelAndView indexB() {
         ModelAndView modelAndView = new ModelAndView("indexB");
         modelAndView.addObject("newTodo", new ToDoModel());
         modelAndView.addObject("backlog", toDoService.getAllByStatus(StatusType.BACKLOG));
